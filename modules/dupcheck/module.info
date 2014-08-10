@@ -1,0 +1,7 @@
+name		= "Duplicate Image Module"
+description 	= "When images are added/modified, this module will update a table in the gallery database to contain the MD5SUM of the fullsize image.  It will add an item in the admin/contents menu to check for duplicate files, then display them in a dynamic album for you.<br />Version 2 | By J.E. Nash";
+version 	= 2
+author_name 	= "J.E. Nash"
+author_url 	= "http://codex.gallery2.org/User:jnash"
+info_url 	= "http://codex.gallery2.org/Gallery3:Modules:dupcheck"
+discuss_url 	= "http://gallery.menalto.com/node/106123"

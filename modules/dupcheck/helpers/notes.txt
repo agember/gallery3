@@ -1,0 +1,19 @@
+show dups =
+select item_id, g3fullsize_md5sums.itemmd5 from g3fullsize_md5sums
+inner join (select itemmd5 from g3fullsize_md5sums group by itemmd5 having
+count(id) > 1) dup on g3fullsize_md5sums.itemmd5 = dup.itemmd5 order by
+g3fullsize_md5sums.itemmd5;
+
+show dup counts = select itemmd5,count(*) from g3fullsize_md5sums group by
+itemmd5 having count(*) > 1;
+
+
+
+
+
+
+
+select * from g3items where id IN (select item_id from g3fullsize_md5sums
+inner join (select itemmd5 from g3fullsize_md5sums group by itemmd5 having
+count(id) > 1) dup on g3fullsize_md5sums.itemmd5 = dup.itemmd5 order by
+g3fullsize_md5sums.itemmd5)

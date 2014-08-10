@@ -1,0 +1,7 @@
+name = "Rebuild items"
+description = "Rebuild thumbs and resizes in specific album.  Rebuild single items as well."
+version = 6
+author_name = "floridave"
+author_url = "http://codex.gallery2.org/User:Floridave"
+info_url = "http://codex.gallery2.org/Gallery3:Modules:rebuild_items"
+discuss_url = "http://gallery.menalto.com/forum_module_rebuild_items"

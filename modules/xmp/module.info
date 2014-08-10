@@ -1,0 +1,10 @@
+name = "XMP"
+description = "Import data from XMP Metadata, which is left by some photo editing 
+software such as Windows Live Photo Gallery. Requires at least the 'Tags' module, 
+and will use the 'Photo Annotation' module if present. "
+version = 1
+author_name = "Tomek Kott"
+author_url = "http://kott.fm/tomek/"
+info_url = "http://kott.fm/tomek/plugins-extensions/module-xmp/"
+discuss_url = "http://kott.fm/tomek/forums/xmp-module/"
+
