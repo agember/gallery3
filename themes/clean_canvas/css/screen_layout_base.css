@@ -1,0 +1,960 @@
+/**
+ * Gallery 3 Clean Canvas Theme Screen Styles
+ *
+ * @requires YUI reset, font, grids CSS
+ *
+ * Sheet organization:
+ *   1)  Font sizes, base HTML elements
+ *   2)  Reusable content blocks
+ *   3)  Page layout containers
+ *   4)  Content blocks in specific layout containers
+ *   5)  States and interactions
+ *   6)  Positioning and order
+ *   7)  Navigation and menus
+ *   8)  jQuery and jQuery UI
+ *   9)  Right-to-left language styles
+ */
+
+/** *******************************************************************
+ * 1) Font sizes, base HTML elements
+ **********************************************************************/
+
+p {
+  margin-bottom: 1em;
+}
+
+#g-sidebar .g-block li {
+  margin-bottom: .7em;
+}
+
+#g-sidebar{
+  top: -30px;
+}
+
+.g-no-breadcrumb-sidebar-correction{
+  top:160px;
+}
+
+/* Links ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+#g-dialog #g-action-status li {
+  width: 400px;
+  white-space: normal;
+  padding-left: 32px;
+}
+
+/* Forms ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+form {
+  margin: 0;
+}
+
+fieldset {
+  padding: 0 1em .8em 1em;
+}
+
+#g-banner fieldset,
+#g-sidebar fieldset {
+  padding: 0;
+}
+
+legend {
+  margin: 0;
+  padding: 0 .2em;
+}
+
+#g-banner legend,
+#g-sidebar legend,
+input[type="hidden"] {
+  display: none;
+}
+
+input.textbox,
+input[type="text"],
+input[type="password"],
+textarea {
+  clear: both;
+  width: 50%;
+}
+
+textarea {
+  height: 12em;
+  width: 97%;
+}
+
+input.checkbox,
+input[type=checkbox],
+input.radio,
+input[type=radio] {
+  float: left;
+  margin-right: .4em;
+}
+
+/* Form layout ~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+form li {
+  margin: 0;
+  padding: 0 0 .2em 0;
+}
+
+form ul {
+  margin-top: 0;
+}
+
+form ul ul {
+  clear: both;
+}
+
+form ul ul li {
+  float: left;
+}
+
+input,
+select,
+textarea {
+  display: block;
+  clear: both;
+  padding: .2em;
+}
+
+input[type="submit"],
+input[type="reset"] {
+  display: inline;
+  clear: none;
+  float: left;
+}
+
+/* Forms in dialogs and panels ~~~~~~~~~ */
+
+#g-dialog ul li {
+  padding-bottom: .8em;
+}
+
+#g-dialog fieldset,
+#g-panel fieldset {
+  padding: 0;
+}
+
+#g-panel legend {
+  display: none;
+}
+
+#g-dialog input.textbox,
+#g-dialog input[type=text],
+#g-dialog input[type=password],
+#g-dialog textarea {
+  width: 97%;
+}
+
+/* Short forms ~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.g-short-form legend,
+.g-short-form label {
+  display: none;
+}
+
+.g-short-form fieldset {
+  padding: 0;
+}
+
+.g-short-form li {
+  float: left;
+  margin: 0 !important;
+  padding: .4em 0;
+}
+
+.g-short-form .textbox,
+.g-short-form input[type=text] {
+  padding: .3em .6em;
+  width: 100%;
+}
+
+.g-short-form .textbox.g-error {
+  padding-left: 24px;
+}
+
+.g-short-form .g-cancel {
+  display: block;
+  margin: .3em .8em;
+}
+
+#g-sidebar .g-short-form li {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Tables ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+table {
+  width: 100%;
+}
+
+#g-content table {
+  margin: 1em 0;
+}
+
+th,
+td {
+  padding: .5em;
+}
+
+td {
+  vertical-align: top;
+}
+
+/** *******************************************************************
+ * 2) Reusable content blocks
+ *********************************************************************/
+
+.g-block h2 {
+/*  background-color: #e8e8e8;*/
+  padding: .3em .8em;
+}
+
+.g-block-content {
+  margin-top: 1em;
+}
+
+/*** ******************************************************************
+ * 3) Page layout containers
+ *********************************************************************/
+
+ /* Dimension and scale ~~~~~~~~~~~~~~~~~~~ */
+.g-one-quarter {
+  width: 25%;
+}
+
+.g-one-third {
+  width: 33%;
+}
+
+.g-one-half {
+  width: 50%;
+}
+
+.g-two-thirds {
+  width: 66%;
+}
+
+.g-three-quarters {
+  width: 75%;
+}
+
+.g-whole {
+  width: 100%;
+}
+
+/* View container ~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/* Layout containers ~~~~~~~~~~~~~~~~~~~~~ */
+
+#g-header {
+  margin-bottom: 1em;
+}
+
+#g-banner {
+  min-height: 5em;
+  padding: 1em 20px;
+  position: relative;
+}
+
+#g-content {
+  padding-left: 20px;
+  position: relative;
+}
+
+#g-sidebar {
+  padding: 10px 10px;
+  width: 220px;
+}
+
+#g-footer {
+  margin-top: 20px;
+  padding: 10px 20px;
+}
+
+/** *******************************************************************
+ * 4) Content blocks in specific layout containers
+ *********************************************************************/
+
+/* Header  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+#g-banner #g-quick-search-form {
+  clear: right;
+  float: right;
+  margin-top: 1em;
+}
+
+#g-banner #g-quick-search-form input[type='text'] {
+  width: 17em;
+}
+
+#g-content .g-block h2 {
+  padding-left: 0;
+}
+
+#g-sidebar .g-block-content {
+  padding-left: 1em;
+}
+
+/* Album content ~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+#g-content #g-album-grid {
+  margin: 1em 0;
+  position: relative;
+  z-index: 1;
+}
+
+#g-content #g-album-grid .g-item {
+  float: left;
+  padding: 1.6em 8px;
+  position: relative;
+  width: 213px;
+  z-index: 1;
+}
+
+#g-content #g-album-grid .g-item h2 {
+  margin: 5px 0;
+}
+
+#g-content .g-photo h2,
+#g-content .g-item .g-metadata {
+  display: block;
+  margin-bottom: .6em;
+}
+
+#g-content #g-album-grid .g-album h2 span.g-album {
+  display: inline-block;
+  height: 20px;
+  margin-right: 2px;
+  width: 20px;
+}
+
+#g-content #g-album-grid .g-hover-item {
+  position: absolute !important;
+  z-index: 1000 !important;
+}
+
+#g-content .g-hover-item h2,
+#g-content .g-hover-item .g-metadata {
+  display: block;
+}
+
+#g-content #g-album-grid #g-place-holder {
+  position: relative;
+  visibility: hidden;
+  z-index: 1;
+}
+
+/* Search results ~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+#g-content #g-search-results {
+  margin-top: 1em;
+  padding-top: 1em;
+}
+
+/* Individual photo content ~~~~~~~~~~~~~~ */
+
+#g-item {
+  position: relative;
+  width: 100%;
+}
+
+#g-item #g-photo,
+#g-item #g-movie {
+  padding: 2.2em 0;
+  position: relative;
+}
+
+#g-item img.g-resize,
+#g-item a.g-movie {
+  display: block;
+  margin: 0 auto;
+}
+
+
+/* Footer content ~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+#g-footer #g-credits li {
+  padding-right: 1.2em;
+}
+
+
+/** *******************************************************************
+ *  5) States and interactions
+ **********************************************************************/
+
+.g-editable {
+  padding: .2em .3em;
+}
+
+.g-error,
+.g-info,
+.g-success,
+.g-warning {
+  padding-left: 30px;
+}
+
+form li.g-error,
+form li.g-info,
+form li.g-success,
+form li.g-warning {
+  padding: .3em .8em .3em 0;
+}
+
+.g-short-form li.g-error {
+  padding: .3em 0;
+}
+
+form.g-error input[type="text"],
+li.g-error input[type="text"],
+form.g-error input[type="password"],
+li.g-error input[type="password"],
+form.g-error input[type="checkbox"],
+li.g-error input[type="checkbox"],
+form.g-error input[type="radio"],
+li.g-error input[type="radio"],
+form.g-error textarea,
+li.g-error textarea,
+form.g-error select,
+li.g-error select {
+  border: 2px solid #f00;
+  margin-bottom: .2em;
+}
+
+form .g-error {
+  padding-left: 20px;
+}
+
+.ui-sortable .g-target,
+.ui-state-highlight {
+  height: 2em;
+  margin: 1em 0;
+}
+
+
+/** *******************************************************************
+ *  6) Positioning and order
+ **********************************************************************/
+
+.g-left {
+  clear: none;
+  float: left;
+}
+
+.g-right {
+  clear: none;
+  float: right;
+}
+
+/** *******************************************************************
+ * 7) Navigation and menus
+ *********************************************************************/
+
+/* Login menu ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+#g-banner-languages
+{
+  position:absolute;
+  right:250px;
+  float: right;
+  margin-top: -5px;
+}
+
+#g-banner #g-login-menu {
+/* color: #999;*/
+float: right;
+margin-top: -5px;
+}
+
+#g-banner #g-login-menu li {
+  padding-left: 1.2em;
+}
+
+
+/* Site Menu  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+#g-site-menu {
+	bottom: 0;
+	left: 160px;
+	position: absolute;
+}
+
+#g-site-menu ul li ul {
+  padding: 0;
+}
+
+/* Context Menu  ~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.g-context-menu {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  margin-top: 2em;
+  z-index: 100;
+}
+
+.g-item .g-context-menu {
+  display: none;
+  margin-top: 2em;
+  width: 100%;
+}
+
+#g-item .g-context-menu ul {
+  display: none;
+}
+
+.g-context-menu li a {
+  display: block;
+}
+
+.g-hover-item .g-context-menu {
+  display: block;
+}
+
+.g-hover-item .g-context-menu li {
+  text-align: left;
+}
+
+.g-hover-item .g-context-menu a:hover {
+  text-decoration: none;
+}
+
+/* View Menu  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+#g-view-menu {
+  padding-bottom: 5px;
+  margin-bottom: 1em;
+}
+
+#g-view-menu a {
+  background-position: 50% 50%;
+  height: 22px !important;
+  width: 40px !important;
+}
+
+/** *******************************************************************
+ * 8) jQuery and jQuery UI
+ *********************************************************************/
+
+ /* Generic block container ~~~~~~~~~~~~~~~ */
+
+.g-block {
+  clear: both;
+  margin-bottom: 2.5em;
+}
+
+.g-block-content {
+}
+
+/* Superfish menu overrides ~~~~~~~~~~~~~~ */
+
+.sf-menu ul {
+	width: 12em;
+}
+
+ul.sf-menu li li:hover ul,
+ul.sf-menu li li.sfHover ul {
+	left:	12em;
+}
+
+ul.sf-menu li li li:hover ul,
+ul.sf-menu li li li.sfHover ul {
+	left: 12em;
+}
+
+
+/* Buttons ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.g-button {
+  display: inline-block;
+  margin: 0 4px 0 0;
+  padding: .2em .4em;
+}
+
+button {
+  padding: 2px 4px 2px 4px;
+}
+
+/* jQuery UI ThemeRoller buttons ~~~~~~~~~ */
+
+.g-buttonset {
+  padding-left: 1px;
+}
+
+.g-buttonset li {
+  float: left;
+}
+
+.g-buttonset .g-button {
+  margin: 0;
+}
+
+.ui-icon-left .ui-icon {
+  float: left;
+  margin-right: .2em;
+}
+
+.ui-icon-right .ui-icon {
+  float: right;
+  margin-left: .2em;
+}
+
+/* Rotate icon, ThemeRoller only provides one of these */
+
+.ui-icon-rotate-ccw {
+  background-position: -192px -64px;
+}
+
+.ui-icon-rotate-cw {
+  background-position: -208px -64px;
+}
+
+.g-progress-bar {
+  height: 1em;
+  width: 100%;
+  margin-top: .5em;
+  display: inline-block;
+}
+
+/* Status and validation messages ~~~~ */
+
+.g-message-block {
+  background-position: .4em .3em;
+  padding: 0;
+}
+
+#g-action-status {
+  margin-bottom: 1em;
+}
+
+#g-action-status li,
+p#g-action-status,
+div#g-action-status {
+  padding: .3em .3em .3em 30px;
+}
+
+#g-site-status li {
+  padding: .3em .3em .3em 30px;
+}
+
+.g-module-status {
+  clear: both;
+  margin-bottom: 1em;
+}
+
+.g-message {
+  background-position: 0 50%;
+}
+
+/* Breadcrumbs ~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.g-breadcrumbs {
+  clear: both;
+  padding: 0 20px;
+}
+
+.g-breadcrumbs li {
+  float: left;
+  padding: 1em 8px 1em 18px;
+}
+
+.g-breadcrumbs .g-first {
+  padding-left: 0;
+}
+
+.g-breadcrumbs li a,
+.g-breadcrumbs li span {
+  display: block;
+}
+
+#g-dialog ul.g-breadcrumbs {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+/* Pagination ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.g-paginator {
+  padding: .2em 0;
+  width: 100%;
+}
+
+.g-paginator li {
+  float: left;
+  width: 30%;
+}
+
+.g-paginator .g-info {
+  padding: .2em 0;
+  width: 40%;
+}
+
+/* Dialogs and panels ~~~~~~~~~~~~~~~~~~ */
+
+#g-dialog legend {
+  display: none;
+}
+
+#g-dialog .g-cancel {
+  margin: .4em 1em;
+}
+
+#g-panel {
+  display: none;
+  padding: 1em;
+}
+
+/* Inline layout  ~~~~~~~~~~ */
+
+.g-inline li {
+  float: left;
+  margin-left: 1.8em;
+  padding-left: 0 !important;
+}
+
+.g-inline li.g-first {
+  margin-left: 0;
+}
+
+
+/** *******************************************************************
+ *  9) Right to left language styles
+ *********************************************************************/
+
+.rtl .g-error,
+.rtl .g-info,
+.rtl .g-success,
+.rtl .g-warning,
+.rtl #g-add-photos-status .g-success,
+.rtl #g-add-photos-status .g-error {
+  background-position: center right;
+  padding-right: 30px !important;
+}
+
+.rtl form li.g-error,
+.rtl form li.g-info,
+.rtl form li.g-success,
+.rtl form li.g-warning {
+  padding-right: 0 !important;
+}
+
+.rtl .g-left,
+.rtl .g-inline li,
+.rtl #g-content #g-album-grid .g-item,
+.rtl .sf-menu li,
+.rtl .g-breadcrumbs li,
+.rtl .g-paginator li,
+.rtl .g-buttonset li,
+.rtl .ui-icon-left .ui-icon,
+.rtl .g-short-form li,
+.rtl form ul ul li,
+.rtl input[type="submit"],
+.rtl input[type="reset"],
+.rtl input.checkbox,
+.rtl input[type=checkbox],
+.rtl input.radio,
+.rtl input[type=radio] {
+  float: right;
+}
+
+.rtl .g-right,
+.rtl .ui-icon-right .ui-icon {
+  float: left;
+}
+
+.rtl .g-inline li {
+  margin-right: 1em;
+}
+
+.rtl .g-inline li.g-first {
+  margin-right: 0;
+}
+
+.rtl .g-breadcrumbs li {
+  padding: 1em 18px 1em 8px;
+}
+
+.rtl .g-breadcrumbs .g-first {
+  padding-right: 0;
+}
+
+.rtl input.checkbox {
+  margin-left: .4em;
+}
+
+.rtl #g-add-comment {
+  right: inherit;
+  left: 0;
+}
+
+.rtl .ui-icon-left .ui-icon {
+  margin-left: .2em;
+}
+
+.rtl .ui-icon-right .ui-icon {
+  margin-right: .2em;
+}
+
+/* RTL Superfish ~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.rtl .sf-menu a.sf-with-ul {
+	padding-left: 2.25em;
+	padding-right: 1em;
+}
+
+.rtl .sf-sub-indicator {
+	left: .75em !important;
+    right: auto;
+}
+.rtl a > .sf-sub-indicator {  /* give all except IE6 the correct values */
+	top:			.8em;
+	background-position: -10px -100px; /* use translucent arrow for modern browsers*/
+}
+/* apply hovers to modern browsers */
+.rtl a:focus > .sf-sub-indicator,
+.rtl a:hover > .sf-sub-indicator,
+.rtl a:active > .sf-sub-indicator,
+.rtl li:hover > a > .sf-sub-indicator,
+.rtl li.sfHover > a > .sf-sub-indicator {
+	background-position: 0 -100px; /* arrow hovers for modern browsers*/
+}
+
+/* point right for anchors in subs */
+.rtl .sf-menu ul .sf-sub-indicator { background-position:  0 0; }
+.rtl .sf-menu ul a > .sf-sub-indicator { background-position:  -10px 0; }
+/* apply hovers to modern browsers */
+.rtl .sf-menu ul a:focus > .sf-sub-indicator,
+.rtl .sf-menu ul a:hover > .sf-sub-indicator,
+.rtl .sf-menu ul a:active > .sf-sub-indicator,
+.rtl .sf-menu ul li:hover > a > .sf-sub-indicator,
+.rtl .sf-menu ul li.sfHover > a > .sf-sub-indicator {
+	background-position: 0 0; /* arrow hovers for modern browsers*/
+}
+
+.rtl .sf-menu li:hover ul,
+.rtl .sf-menu li.sfHover ul {
+	right: 0;
+	left: auto;
+}
+
+.rtl ul.sf-menu li li:hover ul,
+.rtl ul.sf-menu li li.sfHover ul {
+	right:	12em; /* match ul width */
+	left: auto;
+}
+.rtl ul.sf-menu li li li:hover ul,
+.rtl ul.sf-menu li li li.sfHover ul {
+	right:	12em; /* match ul width */
+	left: auto;
+}
+
+/*** shadows for all but IE6 ***/
+.rtl .sf-shadow ul {
+	padding: 0 0 9px 8px;
+}
+
+/* RTL ThemeRoller ~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.rtl .ui-dialog .ui-dialog-titlebar {
+  padding: 0.5em 1em 0.3em 0.3em;
+}
+
+.rtl .ui-dialog .ui-dialog-title {
+  float: right;
+}
+
+.rtl .ui-dialog .ui-dialog-titlebar-close {
+  left: 0.3em;
+  right: auto;
+}
+
+
+/* RTL paginator ~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.rtl .g-paginator .g-info {
+  width: 35%;
+}
+
+.rtl .g-paginator .g-text-right {
+  margin-left: 0;
+}
+
+.rtl .g-paginator .ui-icon-seek-end {
+  background-position: -80px -160px;
+}
+
+.rtl .g-paginator .ui-icon-seek-next {
+  background-position: -48px -160px;
+}
+
+.rtl .g-paginator .ui-icon-seek-prev {
+  background-position: -32px -160px;
+}
+
+.rtl .g-paginator .ui-icon-seek-first {
+  background-position: -64px -160px;
+}
+
+.rtl #g-header #g-login-menu,
+.rtl #g-header #g-quick-search-form {
+  clear: left;
+  float: left;
+}
+
+.rtl #g-header #g-login-menu li {
+  margin-left: 0;
+  padding-left: 0;
+  padding-right: 1.2em;
+}
+
+.rtl #g-site-menu {
+  left: auto;
+  right: 150px;
+}
+
+#g-logo
+{
+  position: absolute;
+  bottom: 0px;
+}
+
+#g-info
+{
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+}
+#g-comments
+{
+  padding: 20px;
+}
+
+.yui-t5 #yui-main .yui-b
+{
+  margin-right: 210px;
+}
+
+#g-photo
+{
+  padding: 20px;
+}
+
+#g-banner {
+  position: relative;
+  z-index: 3;
+}
+
+#g-exif-block-content {
+  padding: 0px 0px 0px 30px;
+}
+
+/* Internet explorer workarounds */
+#g-banner {
+  z-index: 2;
+  zoom: 1;
+}
+
+#g-photo,
+#g-movie {
+	zoom: 1;
+}

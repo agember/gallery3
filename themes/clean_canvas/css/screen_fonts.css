@@ -1,0 +1,298 @@
+/**
+ * Gallery 3 Clean Canvas Theme Screen Styles
+ *
+ * @requires YUI reset, font, grids CSS
+ *
+ * Sheet organization:
+ *   1)  Font sizes, base HTML elements
+ *   2)  Reusable content blocks
+ *   3)  Page layout containers
+ *   4)  Content blocks in specific layout containers
+ *   5)  States and interactions
+ *   6)  Positioning and order
+ *   7)  Navigation and menus
+ *   8)  jQuery and jQuery UI
+ *   9)  Right-to-left language styles
+ */
+
+/** *******************************************************************
+ * 1) Font sizes, base HTML elements
+ **********************************************************************/
+
+body, html {
+	font-family: Verdana, Geneva, sans-serif;
+}
+
+em {
+  font-style: oblique;
+}
+
+h1, h2, h3, h4, h5, strong, th {
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 1.0em;
+}
+
+#g-dialog h1 {
+  font-size: 0.8em;
+}
+
+/* auf photopage oben navigation */
+.g-paginator .g-info,
+.g-paginator li
+{
+	font-size: 0.85em;
+}
+
+#g-info h1
+{
+	font-size: 0.8em;
+}
+
+h2 {
+  font-size: 1.3em;
+}
+
+#g-sidebar .g-block h2 {
+  font-size: 1.0em;
+}
+
+#g-content,
+#g-site-menu,
+h3 {
+	font-size: 1.0em;
+}
+
+#g-site-menu
+{
+	font-size: 1.1em;
+}
+
+#g-sidebar,
+.g-breadcrumbs {
+  font-size: .8em;
+}
+
+#g-banner,
+#g-footer,
+.g-message {
+  font-size: 0.7em;
+}
+
+#g-album-grid .g-item,
+#g-item #g-photo,
+#g-item #g-movie {
+  font-size: 0.8em;
+}
+
+/* comment button */
+#g-admin-comment-button
+{
+	font-size: 1.8em;
+}
+
+/* comment entry */
+#g-content #g-comments .g-author
+{
+	font-size: 0.8em;
+}
+
+/* kommentar an sich */
+#g-content #g-comments ul li div
+{
+	font-size: 0.8em;
+}
+
+#bd
+{
+/*	box-shadow: 4px 4px #666;*/
+}
+
+/* Links ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+a,
+.g-menu a,
+#g-dialog a,
+.g-button,
+.g-button:hover,
+.g-button:active,
+a.ui-state-hover,
+input.ui-state-hover,
+button.ui-state-hover {
+	text-decoration: none;
+}
+
+#g-banner a
+{
+	text-decoration: none;
+}
+a:hover,
+#g-dialog a:hover {
+  text-decoration: underline;
+}
+
+.g-menu a:hover {
+  text-decoration: none;
+}
+
+/* Forms ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+legend {
+  font-weight: bold;
+}
+
+caption,
+th {
+  text-align: left;
+}
+
+
+/* Text ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.g-text-small {
+  font-size: .8em;
+}
+
+.g-text-big {
+  font-size: 1.2em;
+}
+
+.g-text-right {
+  text-align: right;
+}
+
+/** *******************************************************************
+ * 2) Reusable content blocks
+ *********************************************************************/
+
+.g-block-content li{
+  font-size: 1.0em;
+}
+
+/* View container ~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+
+/** *******************************************************************
+ * 4) Content blocks in specific layout containers
+ *********************************************************************/
+
+#g-comments .g-block h2 {
+	font-size: 0.8em !important;
+}
+
+#g-content #g-album-grid .g-item {
+  text-align: center;
+}
+
+/** *******************************************************************
+ *  5) States and interactions
+ **********************************************************************/
+
+.g-active,
+.g-enabled,
+.g-available,
+.g-selected,
+.g-highlight {
+  font-weight: bold;
+}
+
+.g-inactive,
+.g-disabled,
+.g-unavailable,
+.g-uneditable,
+.g-locked,
+.g-deselected,
+.g-understate {
+  font-weight: normal;
+}
+
+/** *******************************************************************
+ *  6) Positioning and order
+ **********************************************************************/
+
+
+/** *******************************************************************
+ * 7) Navigation and menus
+ *********************************************************************/
+
+.g-hover-item .g-context-menu li {
+  text-align: left;
+}
+
+.g-hover-item .g-context-menu a:hover {
+  text-decoration: none;
+}
+
+.g-button,
+.g-button:hover,
+.g-button:active {
+  text-decoration: none;
+}
+
+.g-paginator .g-info {
+  text-align: center;
+}
+
+/* Dialogs and panels ~~~~~~~~~~~~~~~~~~ */
+
+#g-dialog {
+  text-align: left;
+}
+
+
+/** *******************************************************************
+ *  9) Right to left language styles
+ *********************************************************************/
+
+.rtl {
+  direction: rtl;
+}
+
+.rtl #g-header,
+.rtl #g-content,
+.rtl #g-sidebar,
+.rtl #g-footer,
+.rtl caption,
+.rtl th,
+.rtl #g-dialog,
+.rtl .g-context-menu li a,
+.rtl .g-message-box li,
+.rtl #g-site-status li {
+  text-align: right;
+}
+
+.rtl .g-text-right {
+  text-align: left;
+}
+
+
+/* RTL Superfish ~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+#g-tag-cloud
+{
+  font-size: 0.8em;
+}
+
+#g-info h1
+{
+  font-size: 1.2em;
+}
+#g-info
+{
+  font-size:0.9em;
+}
+#g-comments
+{
+  font-size: 0.9em;
+}
+
+#g-comment-detail
+{
+  font-size: 1.3em;
+}
+
+.g-valign h2
+{
+  font-size: 1.2em;
+}
+

@@ -1,0 +1,407 @@
+/**
+ * Gallery 3 Clean Canvas Theme Screen Styles
+ *
+ * @requires YUI reset, font, grids CSS
+ *
+ * Sheet organization:
+ *   1)  Font sizes, base HTML elements
+ *   2)  Reusable content blocks
+ *   3)  Page layout containers
+ *   4)  Content blocks in specific layout containers
+ *   5)  States and interactions
+ *   6)  Positioning and order
+ *   7)  Navigation and menus
+ *   8)  jQuery and jQuery UI
+ *   9)  Right-to-left language styles
+ */
+
+/** *******************************************************************
+ * 1) Font sizes, base HTML elements
+ **********************************************************************/
+
+body, html {
+	background-color: #fff;
+	background: url("../../images/clean/page_background.jpg");
+	color: #555;	/*  font-family: 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;*/
+}
+
+#g-sidebar .g-block h2 {
+  background: rgba( 255,255,255,0.5 );
+}
+
+#g-sidebar{
+  background:url("../../images/clean/background_header.jpg");
+}
+
+
+/* Links ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+a,
+.g-menu a,
+#g-dialog a,
+.g-button,
+.g-button:hover,
+.g-button:active,
+a.ui-state-hover,
+input.ui-state-hover,
+button.ui-state-hover {
+	color: #3C5580 !important;
+}
+
+#g-banner a
+{
+	color: #3C5580;
+}
+
+.g-menu li,
+.g-menu ul {
+	background: transparent !important;
+}
+
+/* Forms ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+input.textbox,
+input[type="text"],
+input[type="password"],
+textarea {
+  border-top-color: #ccc;
+  border-left-color: #ccc;
+  color: #333;
+}
+
+input:focus,
+input.textbox:focus,
+input[type=text]:focus,
+textarea:focus,
+option:focus {
+  background-color: #ffc;
+  color: #000;
+}
+
+input[readonly] {
+  background-color: #F4F4FC;
+}
+
+/* Short forms ~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.g-short-form .textbox,
+.g-short-form input[type=text] {
+  color: #666;
+}
+
+.g-short-form .textbox.g-error {
+  color: #f00;
+}
+
+
+/** *******************************************************************
+ * 2) Reusable content blocks
+ *********************************************************************/
+
+
+/*** ******************************************************************
+ * 3) Page layout containers
+ *********************************************************************/
+
+/* View container ~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.g-view {
+  background: url("../../images/clean/background2.jpg");
+}
+
+/* Layout containers ~~~~~~~~~~~~~~~~~~~~~ */
+
+#g-banner {
+  background: url("../../images/clean/background_header.jpg"); 
+}
+
+#g-footer {
+	background:url("../../images/clean/background_header.jpg");
+}
+
+/** *******************************************************************
+ * 4) Content blocks in specific layout containers
+ *********************************************************************/
+
+/* Header  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+#g-content .g-block h2 {
+  background-color: transparent;
+}
+
+/* Album content ~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+#g-content #g-album-grid .g-album h2 span.g-album {
+  background: transparent url('../../images/clean/ico-album.png') no-repeat top left;
+}
+
+#g-content #g-album-grid .g-hover-item {
+  background:url("../../images/clean/background_header.jpg");
+}
+
+
+/* In-line editing  ~~~~~~~~~~~~~~~~~~~~~~ */
+
+#g-in-place-edit-message {
+  background-color: #fff;
+}
+
+/* Permissions ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+#g-edit-permissions-form td {
+  background-image: none;
+}
+
+#g-permissions .g-denied {
+  background-color: #fcc;
+}
+
+#g-permissions .g-allowed {
+  background-color: #cfc;
+}
+
+
+#g-permissions .g-active a {
+  background: #eee;
+}
+
+/** *******************************************************************
+ *  5) States and interactions
+ **********************************************************************/
+
+.g-inactive,
+.g-disabled,
+.g-unavailable,
+.g-uneditable,
+.g-locked,
+.g-deselected,
+.g-understate {
+  color: #ccc;
+}
+
+.g-editable:hover {
+  background-color: #ffc;
+}
+
+form li.g-error,
+form li.g-info,
+form li.g-success,
+form li.g-warning {
+  background-image: none;
+}
+
+.g-error,
+.g-denied,
+tr.g-error td.g-error,
+#g-add-photos-status .g-error {
+  background: #f6cbca url('../../images/clean/ico-error.png') no-repeat .4em 50%;
+  color: #f00;
+}
+
+.g-info {
+  background: #e8e8e8 url('../../images/clean/ico-info.png') no-repeat .4em 50%;
+}
+
+.g-success,
+.g-allowed,
+#g-add-photos-status .g-success {
+  background: #d9efc2 url('../../images/clean/ico-success.png') no-repeat .4em 50%;
+}
+
+tr.g-success {
+	background-image: none;
+}
+
+tr.g-success td.g-success {
+	background-image: url('../../images/clean/ico-success.png');
+}
+
+.g-warning,
+tr.g-warning td.g-warning {
+  background: #fcf9ce url('../../images/clean/ico-warning.png') no-repeat .4em 50%;
+}
+
+form .g-error {
+  background-color: #fff;
+}
+
+.g-installed {
+  background-color: #eeeeee;
+}
+
+.g-default {
+  background-color: #c5dbec;
+}
+
+.ui-sortable .g-target,
+.ui-state-highlight {
+  background-color: #fcf9ce;
+}
+
+/* Ajax loading indicator ~~~~~~~~~~~~~~~~ */
+
+.g-loading-large,
+.g-dialog-loading-large {
+  background: #e8e8e8 url('../../images/clean/loading-large.gif') no-repeat center center !important;
+}
+
+.g-loading-small {
+  background: #e8e8e8 url('../../images/clean/loading-small.gif') no-repeat center center !important;
+}
+
+/** *******************************************************************
+ *  6) Positioning and order
+ **********************************************************************/
+
+.g-even {
+  background-color: #fff;
+}
+
+.g-odd {
+  background-color: #eee;
+}
+
+/** *******************************************************************
+ * 7) Navigation and menus
+ *********************************************************************/
+
+
+#g-site-menu ul li:hover {
+  background-color: #CCC !important;
+}
+
+#g-site-menu ul li ul li:hover, #g-site-menu a:hover, #g-site-menu a:active, #g-site-menu a:focus {
+  background-color: #AAA !important;
+}
+#g-site-menu ul {
+	background-color: #CCC;
+}
+
+#g-site-menu ul li ul {
+  background-color: #CCC !important;
+}
+
+/* Context Menu  ~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.g-context-menu {
+  background-color: #fff;
+}
+
+#g-view-menu #g-slideshow-link {
+  background-image: url('../../images/clean/ico-view-slideshow.png');
+}
+
+#g-view-menu .g-fullsize-link {
+  background-image: url('../../images/clean/ico-view-fullsize.png');
+}
+
+#g-view-menu #g-comments-link {
+  background-image: url('../../images/clean/ico-view-comments.png');
+}
+
+#g-view-menu #g-print-digibug-link {
+  background-image: url('../../images/clean/ico-print.png');
+}
+
+/** *******************************************************************
+ * 8) jQuery and jQuery UI
+ *********************************************************************/
+
+.sfHover li
+{
+  background-color: #CCC;
+}
+
+.sf-menu li:hover, .sf-menu li.sfHover, .sf-menu a:focus, .sf-menu a:hover, .sf-menu a:active
+{
+  background-color: #FFF;
+}
+.sf-menu li li,
+.sf-menu li li ul li {
+	/*	background: rgba( 255,255,255,0.5 );*/
+  background-color: #CCC;
+}
+
+.sfmenu li {
+	background-color: #CCC;
+	background:#CCC;
+}
+
+.sf-menu li:hover {
+/*  background-color: #dfe9ff;*/
+	background-color: #CCC;
+}
+
+/* jQuery UI Dialog ~~~~~~~~~~~~~~~~~~~~~~ */
+
+.ui-widget-overlay {
+  background: #000;
+}
+
+
+
+/* Breadcrumbs ~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.g-breadcrumbs li {
+  background: transparent url('../../images/clean/ico-separator.gif') no-repeat scroll left center;
+}
+
+.g-breadcrumbs .g-first {
+  background: none;
+}
+
+
+/* Pagination ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.g-paginator .g-info {
+  background: none;
+}
+
+
+/* Autocomplete  ~~~~~~~~~~ */
+.ac_loading {
+  background: white url('../../images/clean/loading-small.gif') right center no-repeat !important;
+}
+
+/** *******************************************************************
+ *  9) Right to left language styles
+ *********************************************************************/
+
+
+.rtl .g-breadcrumbs li {
+  background: transparent url('../../images/clean/ico-separator-rtl.gif') no-repeat scroll right center;
+}
+
+.rtl .g-breadcrumbs .g-first {
+  background: none;
+}
+
+
+/* RTL Superfish ~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.rtl .sf-sub-indicator {
+	background: url('../../../../lib/superfish/images/arrows-ffffff-rtl.png') no-repeat -10px -100px; /* 8-bit indexed alpha png. IE6 gets solid image only */
+}
+
+/*** shadows for all but IE6 ***/
+.rtl .sf-shadow ul {
+	background:	url('../../../../lib/superfish/images/shadow.png') no-repeat bottom left;
+}
+
+.rtl #g-view-menu #g-slideshow-link {
+  background-image: url('../../images/clean/ico-view-slideshow-rtl.png');
+}
+
+#g-banner ul li a
+{
+	color: #3C5580 !important;
+}
+
+#g-site-menu ul li a
+{
+	color: #3C5580 !important;
+}
+
+#g-view-menu #g-download-archive-link {
+  background-image: url('../../images/clean/ico-view-downloadarchive_new.png') !important;
+}
+
