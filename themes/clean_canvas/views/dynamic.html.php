@@ -18,9 +18,9 @@
     </a>
     <h2><?= html::purify($child->title) ?></h2>
     <?= $theme->thumb_bottom($child) ?>
-    <ul class="g-metadata">
+<!--    <ul class="g-metadata">
       <?= $theme->thumb_info($child) ?>
-    </ul>
+    </ul>-->
   </li>
   <? endforeach ?>
 </ul>

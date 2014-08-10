@@ -30,6 +30,36 @@ class xmp_event_Core {
       }	//end of if photo()
     }
   }
+   
+  static function item_updated_data_file($item) {
+    if ($item->is_photo()) {
+    // Only try to extract XMP from photos
+      $debug = module::get_var("xmp","logDebugInfo","0");
+      if($debug) {
+        Kohana_Log::add("information", "[XMP Module] A photo updated data file event detected. Running XMP.\n");
+      }
+      // Check for and delete existing Faces and Notes.
+      $existingFaces = ORM::factory("items_face")
+                          ->where("item_id", "=", $item->id)
+                          ->find_all();
+      if (count($existingFaces) > 0) {
+        if($debug) {
+          Kohana_Log::add("information", "[XMP Module] Removing ".count($existingFaces)." faces.\n");
+        }
+       foreach ($existingFaces as $face) {
+           $tag = ORM::factory("tag", $face->tag_id);
+       if (!is_null($tag)) {
+         $tag->remove($item);
+       }
+   }
+        db::build()->delete("items_faces")->where("item_id", "=", $item->id)->execute();
+      }
+      if ($item->mime_type == "image/jpeg") {
+        xmp::extract($item,false);
+      }
+    }
+  }
+
   static function module_change($changes) {
     // See if the Tags module is installed,
     //   tell the user to install it if it isn't.

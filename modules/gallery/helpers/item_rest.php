@@ -89,6 +89,12 @@ class item_rest_Core {
         $result["members"][] = rest::url("item", $child);
       }
     }
+    // Try to get MD5SUM
+    if ($item->is_photo())
+    {
+        $record = ORM::factory("fullsize_md5sum")->where("item_id", "=", $item->id)->find();
+        $result["entity"]["md5"] = $record->itemmd5;
+    }
 
     return $result;
   }

@@ -131,5 +131,5 @@
 			});
 		</script>
     <? if ($legend_display != ""): ?>
-    <?= "<div style=\"text-align: center\">". $legend_display ."</div>" ?>
+    <?= "<div style=\"text-align: center; margin-top:10px\">". $legend_display ."</div>" ?>
     <? endif ?>

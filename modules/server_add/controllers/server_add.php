@@ -256,6 +256,7 @@ class Server_Add_Controller extends Admin_Controller {
           try {
             $extension = strtolower(pathinfo($name, PATHINFO_EXTENSION));
             if (legal_file::get_photo_extensions($extension)) {
+              $title = str_replace(".".$extension,"", $name);
               $photo = ORM::factory("item");
               $photo->type = "photo";
               $photo->parent_id = $parent->id;

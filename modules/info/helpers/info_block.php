@@ -56,6 +56,21 @@ class info_block_Core {
             "value" => gallery::date_time($theme->item->captured)
           );
         }
+        if ($theme->item->height && $theme->item->width && module::get_var("info", "show_resolution")) {
+          $info["resolution"] = array(
+            "label" => t("Resolution:"),
+            "value" => html::clean(
+                $theme->item->height."x".$theme->item->width)
+          );
+        }
+        if ($theme->item->is_photo() && $theme->item->parent() && $theme->item->parent()->name) {
+          $info["album"] = array(
+            "label" => t("Album:"),
+            "value" => html::anchor(
+                html::clean($theme->item->parent()->abs_url()), 
+                html::clean($theme->item->parent()->name))
+          );
+        }
         if ($theme->item->owner && module::get_var("info", "show_owner")) {
           $display_name = $theme->item->owner->display_name();
           if ($theme->item->owner->url) {
@@ -78,7 +93,19 @@ class info_block_Core {
                 "value" => t("%width x %height px", array("width" => $theme->item->width, "height" => $theme->item->height))
             );
         }
-
+        if ($theme->item->viewable()->descendants_count()) {
+          $info["descendants"] = array(
+            "label" => t("Number of photos:"),
+            "value" => html::clean(
+                $theme->item->viewable()->descendants_count())
+          );
+        }
+        if ($theme->item->id) {
+          $info["id"] = array(
+            "label" => t("Internal ID:"),
+            "value" => html::clean($theme->item->id)
+          );
+        }
         $block->content->metadata = $info;
 
         module::event("info_block_get_metadata", $block, $theme->item);

@@ -44,13 +44,13 @@
 # asking for them.  If you get an error after uncommenting this, make
 # sure you specify "AuthConfig Indexes" in your Apache config file.
 #
-# <IfModule mod_expires.c>
-#   ExpiresActive On
-#   # Cache all files for a month after access (A).
-#   ExpiresDefault A2678400
-#   # Do not cache dynamically generated pages.
-#   ExpiresByType text/html A1
-# </IfModule>
+<IfModule mod_expires.c>
+    ExpiresActive On
+    # Cache all files for a month after access (A).
+    ExpiresDefault A2678400
+    # Do not cache dynamically generated pages.
+    ExpiresByType text/html A1
+</IfModule>
 
 # You can use the mod_rewrite Apache module to get rid of the
 # "index.php" from your Gallery 3 urls.  Uncomment the block below
@@ -70,13 +70,17 @@
 # want these changes to be persistent, talk to your system admin about
 # putting this block into your Apache config files.
 #
-# <IfModule mod_rewrite.c>
-#   Options +FollowSymLinks
-#   RewriteEngine On
-#   RewriteBase /
-#   RewriteCond %{REQUEST_FILENAME} !-f
-#   RewriteCond %{REQUEST_FILENAME} !-d
-#   RewriteRule ^(.*)$ index.php?kohana_uri=$1 [QSA,PT,L]
-#   RewriteRule ^$ index.php?kohana_uri=$1 [QSA,PT,L]
-#   RewriteRule ^index.php/(.*) $1 [QSA,R,L]
-# </IfModule>
+<IfModule mod_rewrite.c>
+    Options +FollowSymLinks
+    RewriteEngine On
+    RewriteBase /
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php?kohana_uri=$1 [QSA,PT,L]
+    RewriteRule ^$ index.php?kohana_uri=$1 [QSA,PT,L]
+    RewriteRule ^index.php/(.*) $1 [QSA,R,L]
+</IfModule>
+
+<ifmodule mod_deflate.c>
+AddOutputFilterByType DEFLATE text/text text/html text/plain text/xml text/css application/x-javascript application/javascript text/javascript
+</ifmodule>

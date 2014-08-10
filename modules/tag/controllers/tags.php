@@ -23,7 +23,13 @@ class Tags_Controller extends Controller {
     $album = ORM::factory("item", 1);
     access::required("view", $album);
 
-    print tag::cloud(module::get_var("tag", "tag_cloud_size", 30));
+    $template = new Theme_View("page.html", "other", "Tags");
+    $template->content = tag::cloud(ORM::factory("tag")->count_all());
+
+    // Display the page.
+    print $template;
+
+    //print tag::cloud(module::get_var("tag", "tag_cloud_size", 30));
   }
 
   public function create($item_id) {

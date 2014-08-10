@@ -28,7 +28,18 @@
 
 <? } else { ?>
 <div id="g-tag-cloud-page">
-  <?= tag::cloud(ORM::factory("tag")->count_all()); ?>
+<ul>
+  <? 
+   $tags = tag::cloud(ORM::factory("tag")->count_all());
+   foreach ($tags as $tag): ?>
+  <li class="size<?=(int)(($tag->count / $max_count) * 7) ?>">
+    <span><?= $tag->count ?> photos are tagged with </span>
+     <a href="<?= $tag->url() ?>"><?= html::clean($tag->name) ?></a>
+     &middot;
+  </li>
+  <? endforeach ?>
+</ul>
+<!--  <?= tag::cloud(ORM::factory("tag")->count_all()); ?>-->
 </div>
 <? } ?>
 
